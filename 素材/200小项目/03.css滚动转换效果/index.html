@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css视差滚动效果</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <span class="curve">
+            <img src="curve.png" alt="">
+        </span>
+    </section>
+    <script>
+        var scroll = document.querySelector('.curve')
+        // 监听滚动事件
+        window.addEventListener('scroll', function () {
+            var value = 1 + window.scrollY / -500
+            // 垂直水平的缩放
+            scroll.style.transform = `scaleY(${value})`
+        })
+    </script>
+</body>
+
+</html>
