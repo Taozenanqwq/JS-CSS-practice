@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+#count {
+    position: relative;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+}
+
+span.count {
+    position: absolute;
+    font-size: 40px;
+    color: #3498DB;
+    left: 50%;
+    top: 50%;
+    transform-origin: center 60px;
+    transform: translate(-50%, -50%) rotateZ(180deg);
+    animation: xuanzhuan 1.5s forwards;
+}
+
+.go {
+    display: none;
+}
+
+button {
+    padding: 0 6px;
+    outline: none;
+    border: none;
+    background: #3498DB;
+    color: white;
+    text-transform: capitalize;
+    height: 25px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+button>* {
+    line-height: 25px;
+}
+
+button>span {
+    vertical-align: middle;
+    display: none;
+    transition: all .3s;
+}
+
+button:hover span {
+    display: inline;
+}
+
+h2 {
+    margin: 15px 0;
+    text-align: center;
+}
+
+@keyframes xuanzhuan {
+    33.3% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    66.7% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(-180deg);
+    }
+}

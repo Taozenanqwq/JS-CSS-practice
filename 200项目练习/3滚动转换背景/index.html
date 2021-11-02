@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .box1 {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: #37C5F9;
+            border-radius: 0 0 50% 50%;
+        }
+        
+        .box1::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background: black;
+            z-index: -1;
+        }
+        
+        .box2 {
+            width: 100%;
+            height: 100vh;
+            background: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        window.onload = function() {
+            let doc = document.documentElement;
+            let body = document.body;
+            let box = document.querySelector('.box1');
+            window.onscroll = function() {
+                let xishu = 1 - doc.scrollTop / doc.clientHeight;
+                box.style.borderRadius = `0 0 ${xishu*50}% ${xishu*50}%`;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+{
+  "id": "2530425",
+  "name": "css1",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "384195",
+      "name": "globe",
+      "font_class": "globe",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "400790",
+      "name": "glass",
+      "font_class": "glass",
+      "unicode": "e732",
+      "unicode_decimal": 59186
+    },
+    {
+      "icon_id": "1061036",
+      "name": "cap",
+      "font_class": "cap",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "10331128",
+      "name": "gift",
+      "font_class": "gift",
+      "unicode": "e685",
+      "unicode_decimal": 59013
+    }
+  ]
+}

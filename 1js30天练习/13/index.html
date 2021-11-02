@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #F8C40D;
+        }
+        
+        .article {
+            width: 800px;
+            background: white;
+            padding: 50px;
+            margin: 30px auto;
+            text-align: justify;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        p {
+            text-indent: 2em;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        img {
+            width: 300px;
+            overflow: hidden;
+            margin: 10px;
+            transition: all .7s;
+        }
+        
+        .article>p:nth-of-type(2n) img {
+            float: right;
+            margin-right: 0;
+            transform: translate(30%, 0);
+            opacity: 0;
+        }
+        
+        .article>p:nth-of-type(2n+1) img {
+            float: left;
+            margin-left: 0;
+            transform: translate(-30%, 0);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="article">
+        <h1>This is an article</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Minima eligendi, p
+            <img src="./rain.jpeg" alt="" ">ariatur explicabo quisquam dolorem enim perspiciatis expedita, a voluptas consequatur laboriosam quia incidunt
+            nostrum nisi quam harum, placeat nihil ipsam. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam velit nulla, eaque deleniti obcaecati officiis ipsam earum. Voluptas ex voluptates officia dolore optio consequuntur facere
+            non architecto sint excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Minima eligendi<img src="./rain.jpeg " alt=" ">, pariatur explicabo quisquam dolorem enim perspiciatis expedita, a voluptas consequatur laboriosam quia incidunt nostrum nisi quam harum, placeat nihil ipsam.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam velit nulla, eaque deleniti obcaecati officiis ipsam earum. Voluptas ex voluptates officia dolore optio consequuntur facere non architecto sint excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum,
+            dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum dolor sit
+            amet consectetur adipisicing elit. Minima el<img src="./rain.jpeg " alt=" ">igendi, pariatur explicabo quisquam dolorem enim perspiciatis expedita, a voluptas consequatur laboriosam quia incidunt nostrum nisi quam harum, placeat nihil ipsam.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod aliquam velit nulla, eaque deleniti obcaecati officiis ipsam earum. Voluptas ex voluptates officia dolore optio consequuntur facere non architecto sint excepturi.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus. Lorem ipsum,
+            dolor sit amet consecte<img src="./rain.jpeg " alt=" ">tur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eligendi, pariatur explicabo quisquam dolorem enim perspiciatis expedita, a voluptas consequatur laboriosam quia incidunt nostrum nisi quam harum, placeat nihil ipsam. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Quod aliquam velit nulla, eaque deleniti obcaecati officiis ipsam earum. Voluptas ex voluptates officia dolore optio consequuntur facere non architecto sint excepturi.</p>
+        <p>Lorem ipsum,<img src="./rain.jpeg " alt=" "> dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis
+            temporibus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat perferendis sint fugiat sed repudiandae soluta inventore ratione quas aperiam. Voluptate neque odit odio! Libero sunt qui, eligendi consequuntur corporis temporibus.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima eligendi, pariatur explicabo quisquam dolorem enim perspiciatis expedita, a voluptas consequatur laboriosam quia incidunt nostrum nisi quam harum, placeat nihil ipsam. Lorem ipsum
+            dolor, sit amet consectetur adipisicing elit. Quod aliquam velit nulla, eaque deleniti obcaecati officiis ipsam earum. Voluptas ex voluptates officia dolore optio consequuntur facere non architecto sint excepturi.</p>
+    </div>
+    <script>
+        let img = document.querySelectorAll('img');
+        window.addEventListener('scroll',debounce(scrollIn))
+        function scrollIn(){
+            for(let i of img){
+                if(i.getBoundingClientRect().y+i.getBoundingClientRect().height<0 || i.getBoundingClientRect().y>document.documentElement.clientHeight){
+                    console.log(i);
+                    i.style='';
+                }
+                else{
+                    i.style.transform='translate(0,0)';
+                    i.style.opacity='1';
+                }
+            }
+        }
+        function debounce(fn,wait=100,immdiate=true){
+            let context,args;
+            let startTimeStamp=0,timer;
+            let run = (interval)=>{
+                timer = setTimeout(()=>{
+                    let now = (new Date()).getTime();
+                    let s = now-startTimeStamp
+                if(s<interval){
+                    startTimeStamp=now;
+                   run(wait-s);
+                }
+                else{
+                    if(!immdiate){
+                        fn.apply(context,args)
+                    }
+                    clearTimeout(timer);
+                    timer=null;
+                }
+                }
+             
+                ,interval)
+            }
+            return function(){
+                context=this;
+                args=arguments;
+                startTimeStamp = (new Date()).getTime();
+                if(!timer){
+                    if(immdiate){
+                    fn.apply(context,args)
+                }
+                run(wait);
+                
+            }
+            }
+           
+        }
+
+
+
+    </script>
+</body>
+
+</html>

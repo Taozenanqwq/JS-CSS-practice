@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.font.im/css?family=Kirang+Haerang');
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(45deg, #a552c4, #296ea6);
+      }
+      h1 {
+        font-family: 'Kirang Haerang', cursive;
+        font-size: 100px;
+        text-transform: uppercase;
+        transform: rotate(-10deg);
+        color: white;
+      }
+      h1:nth-of-type(2) {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>what&nbsp;the</h1>
+      <h1>flexbox?!</h1>
+    </div>
+
+    <script>
+      window.onresize = function () {
+        shadowMove()
+      }
+      shadowMove()
+
+      function shadowMove() {
+        let h1 = document.querySelectorAll('h1')
+        let box = document.querySelector('.box')
+        let cw = box.getBoundingClientRect().x + box.getBoundingClientRect().width / 2
+        let ch = box.getBoundingClientRect().y + box.getBoundingClientRect().height / 2
+        let ratiox = 40 / window.innerWidth
+        let ratioy = 40 / window.innerHeight
+        document.addEventListener('mousemove', (e) => {
+          for (let el of h1) {
+            el.style.textShadow = `${ratiox * (e.clientX - cw)}px ${ratioy * (e.clientY - ch)}px 5px rgba(0, 0, 0, 0.3)`
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

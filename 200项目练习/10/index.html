@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #262626;
+        }
+        
+        .box {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 575px;
+            height: 288px;
+            justify-content: center;
+            text-align: justify;
+            background: black;
+            color: white;
+            padding: 50px;
+        }
+        
+        .left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: url(./xx.jpg) no-repeat top left;
+            transition: all .5s;
+            transform-origin: bottom;
+        }
+        
+        .box:hover .left {
+            transform: rotateX(90deg) translateY(50%);
+        }
+        
+        .box:hover .right {
+            transform: rotateX(-90deg) translateY(-50%);
+        }
+        
+        .right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: url(./xx.jpg) no-repeat top right;
+            transform-origin: top;
+            transition: all .5s;
+        }
+        
+        h1 {
+            margin: 0 auto 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>this is a nice picture</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, facilis alias accusamus adipisci doloribus natus ipsum cumque accusantium rerum modi. Accusamus repudiandae nam ab eum tempore illum, delectus numquam dolore!</p>
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+
+</html>

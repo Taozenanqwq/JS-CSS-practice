@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #DDE374;
+        }
+        
+        .content {
+            width: 250px;
+            padding: 20px;
+            border: 2px solid rgba(0, 0, 0, .7);
+            border-radius: 2px;
+            transition: all .5s;
+        }
+        
+        h1 {
+            margin-bottom: 15px;
+        }
+        
+        .content:hover {
+            color: white;
+            background: #41DA55;
+            border: 10px solid white;
+            box-shadow: 0 4px 8px 4px rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Lorem ipsum dolor</h1>
+        <p>sit amet consectetur adipisicing elit. Officiis fugit laudantium in dolore aut ipsa, blanditiis, esse quia reiciendis soluta neque dolorum possimus veniam rerum dicta officia nemo ullam temporibus.</p>
+    </div>
+</body>
+
+</html>

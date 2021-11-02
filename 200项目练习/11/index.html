@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.font.im/css?family=Quicksand');
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand';
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(farthest-side at center, transparent 20%, black), url(./black.jpeg) no-repeat 0 0/100% 100%;
+        }
+        
+        h1 {
+            position: relative;
+            font-size: 100px;
+            color: #F3FFF2;
+            text-shadow: 0 0 20px #ff005b;
+            font-weight: normal;
+        }
+        
+        h1::before {
+            content: '[Neon_Light]';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            color: #F3FFF2;
+            height: 100%;
+            text-shadow: 0 0 20px #ff005b;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #fe3a80;
+            z-index: -1;
+            filter: blur(40px);
+            opacity: .5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>[Neon_Light]</h1>
+</body>
+
+</html>

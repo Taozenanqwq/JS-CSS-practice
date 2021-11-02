@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        
+        .bg {
+            height: 50%;
+            background: pink;
+        }
+        
+        .bg2 {
+            height: 50%;
+            background: white;
+        }
+        
+        .bg2::before {
+            content: '';
+            position: absolute;
+            height: 15px;
+            width: 100%;
+            background: linear-gradient(-45deg, transparent 33.33%, pink 0 66.66%, transparent 0) 0.5px 0 /30px 60px, linear-gradient(45deg, transparent 33.33%, pink 0 66.66%, transparent 0) 0 0 /30px 60px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg"></div>
+    <div class="bg2"></div>
+</body>
+
+</html>
