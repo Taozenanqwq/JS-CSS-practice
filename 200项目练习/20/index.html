@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../lib/font-awesome-4.7.0/css/font-awesome.css">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: black;
+        }
+        
+        .item {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            margin: 0 50px;
+        }
+        
+        .pic {
+            margin-bottom: 15px;
+            transition: all .5s;
+            transform-origin: top;
+        }
+        
+        span {
+            opacity: 0;
+            transition: all .5s;
+        }
+        
+        .item:hover span {
+            opacity: 1;
+            transform: translateY(-100%);
+        }
+        
+        .item:hover .pic {
+            transform: scale(.7);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <div class="pic"><i class="fa fa-map-marker fa-4x" aria-hidden="true"></i></div>
+        <span>address</span></div>
+    <div class="item">
+        <div class="pic"><i class="fa fa-envelope fa-4x" aria-hidden="true"></i></div>
+        <span>e-mail</span></div>
+    <div class="item">
+        <div class="pic"><i class="fa fa-phone fa-4x" aria-hidden="true"></i></div>
+        <span>phone</span></div>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            display: flex;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #262626;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+        }
+        
+        .box {
+            flex: 1;
+            position: relative;
+            height: 80px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 3px solid black;
+            cursor: pointer;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .box::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: pink;
+            z-index: -1;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform 1s;
+        }
+        
+        .box:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+        
+        .box:last-of-type {
+            border: none;
+        }
+        
+        .box:nth-child(1) {
+            filter: hue-rotate(60deg);
+        }
+        
+        .box:nth-child(2) {
+            filter: hue-rotate(120deg);
+        }
+        
+        .box:nth-child(3) {
+            filter: hue-rotate(180deg);
+        }
+        
+        .box:nth-child(4) {
+            filter: hue-rotate(240deg);
+        }
+        
+        .box:nth-child(5) {
+            filter: hue-rotate(300deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"><i class="fa fa-facebook" aria-hidden="true"></i><span>&nbsp;FaceBook</span></div>
+        <div class="box"><i class="fa fa-twitter" aria-hidden="true"></i><span></span>&nbsp;Twitter</span>
+        </div>
+        <div class="box"><i class="fa fa-google" aria-hidden="true"></i><span></span>&nbsp;Google+</span>
+        </div>
+        <div class="box"><i class="fa fa-linkedin" aria-hidden="true"></i><span></span>&nbsp;Linkdin</span>
+        </div>
+        <div class="box"><i class="fa fa-instagram" aria-hidden="true"></i><span></span>&nbsp;Instagram</span>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('mouseover', function(e) {
+            let obj = e.target.closest('.box');
+            if (obj) {
+                obj.style.backgroundPosition = '100% 100%';
+            }
+        })
+        document.addEventListener('mouseout', function(e) {
+            let obj = e.target.closest('.box');
+            if (obj) {
+                obj.style.backgroundPosition = '200px 100%';
+            }
+        })
+    </script>
+</body>
+
+</html>

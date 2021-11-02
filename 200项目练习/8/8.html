@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #F80038;
+        }
+        
+        .box {
+            height: 100px;
+            width: 100px;
+            background: white;
+            position: relative;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+        }
+        
+        .box::before,
+        i {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+        
+        .box::before {
+            content: '';
+            width: 90px;
+            height: 90px;
+            background: #F80038;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+        }
+        
+        .box:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .box:hover i {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"><i class="fa fa-gift fa-2x" aria-hidden="true"></i></div>
+    <div class="box"><i class="fa fa-glass fa-2x" aria-hidden="true"></i></div>
+    <div class="box"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></div>
+    <div class="box"><i class="fa fa-graduation-cap fa-2x" aria-hidden="true"></i></div>
+</body>
+
+</html>

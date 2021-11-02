@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            column-gap: 25px;
+            background: #2C9CEE;
+        }
+        
+        .box {
+            height: 250px;
+            width: 40px;
+            transform: translate(0, -6vh);
+            background: #2C9CEE;
+            animation: shadow 1.5s infinite;
+        }
+        
+        @keyframes shadow {
+            50% {
+                box-shadow: 0 0 30px rgba(0, 0, 0, .3);
+                transform: translate(15px, -6vh) scale(1.1);
+            }
+            99.9999% {
+                box-shadow: none;
+                transform: translate(30px, -6vh);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" data-delay='1'></div>
+    <div class="box" data-delay='2'></div>
+    <div class="box" data-delay='3'></div>
+    <div class="box" data-delay='4'></div>
+    <div class="box" data-delay='5'></div>
+    <div class="box" data-delay='6'></div>
+    <div class="box" data-delay='7'></div>
+    <div class="box" data-delay='8'></div>
+    <script>
+        let boxs = document.querySelectorAll('.box');
+        for (let box of boxs) {
+            box.style.animationDelay = box.dataset.delay * 0.2 + 's'
+        }
+    </script>
+</body>
+
+</html>

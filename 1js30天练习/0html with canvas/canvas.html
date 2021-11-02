@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="can" width="800" height="800"></canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        let canvas = document.getElementById('can');
+        let pen = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        let start;
+        let end;
+        let flag;
+        let hue = 0;
+        let lw = 5;
+        let direction = 1;
+        pen.strokeStyle = 'black';
+        pen.lineCap = 'round';
+        pen.lineJoin = 'round';
+
+        document.addEventListener('mousedown', (e) => {
+            flag = true;
+            [start, end] = [e.clientX, e.clientY];
+        })
+        document.addEventListener('mouseup', (e) => {
+            flag = false;
+        })
+
+
+        document.addEventListener('mousemove', (e) => {
+            draw(e);
+        })
+
+        function draw(e) {
+            if (flag) {
+                pen.beginPath();
+                pen.strokeStyle = `hsl(${hue},80%,50%)`
+                pen.lineWidth = lw;
+                pen.moveTo(start, end);
+                pen.lineTo(e.clientX, e.clientY);
+                pen.stroke();
+                hue++;
+                if (lw > 100 || lw < 5) {
+                    direction = -direction
+                }
+                lw += direction;
+                [start, end] = [e.clientX, e.clientY];
+            }
+
+        }
+    </script>
+</body>
+
+</html>

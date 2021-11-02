@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background: red;
+            justify-content: center;
+            align-items: center;
+            transition: all .7s;
+            transform: scale(0);
+        }
+        
+        h1 {
+            position: relative;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: white;
+            overflow: hidden;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+        
+        .hengxian {
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background: yellow;
+            left: 0;
+            top: 50%;
+            transform: translate(-100%, -50%);
+            transition: all 1s;
+        }
+        
+        h1:hover .hengxian {
+            transform: translate(0, -50%);
+        }
+        
+        .button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: yellow;
+            cursor: pointer;
+            z-index: 3;
+        }
+        
+        .zoom {
+            transform: scale(1);
+        }
+        
+        .line {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 3px;
+            background: black;
+            transition: all .7s;
+        }
+        
+        .line:first-of-type {
+            transform: translate(-50%, -300%);
+        }
+        
+        .line:last-of-type {
+            transform: translate(-50%, 200%);
+        }
+        
+        .open1 {
+            transform: translate(-50%, -50%) rotate(45deg)!important;
+        }
+        
+        .open2 {
+            transform: translate(-50%, -50%) rotate(-45deg)!important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="menu">
+        <h1>
+            <div class="hengxian"></div>HOME</h1>
+        <h1>
+            <div class="hengxian"></div>ABOUT</h1>
+        <h1>
+            <div class="hengxian"></div>services</h1>
+        <h1>
+            <div class="hengxian"></div>portfolio</h1>
+        <h1>
+            <div class="hengxian"></div>ourteam</h1>
+        <h1>
+            <div class="hengxian"></div>contact</h1>
+    </div>
+    <script>
+        let btn = document.getElementsByClassName('button')[0];
+        let menu = document.getElementsByClassName('menu')[0];
+        let line = document.getElementsByClassName('line');
+        btn.onclick = function() {
+            menu.classList.toggle('zoom')
+            line[0].classList.toggle('open1');
+            line[1].classList.toggle('open2');
+        }
+    </script>
+</body>
+
+</html>

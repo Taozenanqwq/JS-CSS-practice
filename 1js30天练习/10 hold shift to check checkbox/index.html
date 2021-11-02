@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            outline: none;
+        }
+        
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #F7C50B;
+        }
+        
+        .item-list {
+            background: white;
+            border-radius: 3px;
+            box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, .3), -2px -2px 4px -2px rgba(0, 0, 0, .3);
+        }
+        
+        .item {
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid lightgray;
+            padding: 0 15px;
+            padding-left: 40px;
+        }
+        
+        input {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            cursor: pointer;
+        }
+        
+        span {
+            display: inline-block;
+            padding: 5px 0;
+            padding-left: 8px;
+            border-left: 1px solid lightgray;
+            vertical-align: top;
+            color: rgb(110, 104, 104);
+            width: 200px;
+            word-break: break-all;
+            line-height: 1.5;
+            text-decoration-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item-list">
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content nomeaning</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content nomeaning nomeaning</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+        <div class="item">
+            <input type="checkbox" name="" id=""><span class="content">this is content</span>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            document.addEventListener('click', (e) => {
+                if (e.target.checked) {
+
+                    e.target.nextElementSibling.style.textDecoration = 'line-through';
+                } else {
+                    e.target.nextElementSibling.style.textDecoration = '';
+                };
+
+
+                if (e.target.checked && e.shiftKey) {
+                    let inputs = document.querySelectorAll('input');
+                    let list = [];
+                    for (let ele of inputs) {
+                        if (ele.checked) {
+                            list.push([].indexOf.call(inputs, ele));
+                        }
+                    }
+                    let min = Math.min.call(window, ...list);
+                    let max = Math.max.call(window, ...list);
+                    for (i = min; i < max + 1; i++) {
+                        inputs[i].checked = true;
+                        inputs[i].nextElementSibling.style.textDecoration = 'line-through'
+
+                    }
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>

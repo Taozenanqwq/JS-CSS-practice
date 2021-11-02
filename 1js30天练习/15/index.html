@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(./rain.jpeg) no-repeat 100% 100%;
+        }
+        
+        .list {
+            width: 200px;
+            background: white;
+            box-shadow: 0 0 5px 10px rgba(0, 0, 0, .3);
+        }
+        
+        li {
+            list-style: none;
+            margin: 0 20px;
+            height: 35px;
+            border-bottom: 2px solid grey;
+            line-height: 35px;
+            padding-left: 10px;
+        }
+        
+        input[type='checkbox'] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        h1 {
+            margin: 20px auto;
+            text-align: center;
+        }
+        
+        ul {
+            margin-bottom: 20px;
+        }
+        
+        form {
+            margin: 10px 20px;
+        }
+        
+        input[type='text'] {
+            width: 70%;
+            height: 20px;
+        }
+        
+        input[type='submit'] {
+            width: 25%;
+            height: 20px;
+            vertical-align: middle;
+            border: none;
+            border-radius: 2px;
+            background: grey;
+            cursor: pointer;
+        }
+        
+        span {
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        input:checked+span::before {
+            content: '💕';
+            position: absolute;
+            top: 50%;
+            left: -25px;
+            transform: translateY(-50%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="list">
+        <h1>Star List</h1>
+        <ul>
+        </ul>
+        <form action="">
+            <input type="text">
+            <input type="submit" value="确认">
+        </form>
+    </div>
+    <script>
+        let submit = document.querySelector('input[type="submit"]');
+        let text = document.querySelector('input[type="text"]')
+        let ul = document.querySelector('ul');
+
+
+        initList();
+        submit.onclick = function(e) {
+            e.preventDefault();
+            if (text.value.trim() !== '') {
+                if (localStorage.getItem('starList')) {
+                    let list = JSON.parse(localStorage.getItem('starList'));
+                    if (list.includes(text.value.trim())) return alert('已存在该歌手！')
+                    list.push(text.value.trim());
+                    localStorage.setItem('starList', JSON.stringify(list))
+                    createLi(text.value.trim())
+                } else {
+                    let list = [];
+                    list.push(text.value.trim());
+                    console.log(list);
+                    localStorage.setItem('starList', JSON.stringify(list))
+                    createLi(text.value.trim())
+
+                }
+
+            }
+        }
+        document.onclick = function(e) {
+            if (e.target.tagName == 'SPAN') {
+                e.target.previousElementSibling.checked = !e.target.previousElementSibling.checked
+            }
+        }
+
+        function createLi(val) {
+            let li = document.createElement('li');
+            li.innerHTML = `<input type="checkbox"><span>${val}</span>`;
+            ul.append(li)
+        }
+
+        function initList() {
+            let list = JSON.parse(localStorage.getItem('starList'));
+            if (list) {
+                for (let val of list) {
+                    console.log(val);
+                    createLi(val);
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
